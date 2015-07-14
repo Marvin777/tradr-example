@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-hover myTabellenzeilen" cellspacing="0" cellpadding="0">
+    <!-- Iteriere ueber Datensaetze und gebe diese aus -->
+    <tr ng-repeat="verkaufsanzeige in verkaufsanzeigen">
+      <!-- Artikelbild -->
+      <td><img src="images/artikelbild.png" alt="Artikelbild"/></td>
+      <td>
+        <table class="myTable">
+          <!-- Ueberschrift, Preis und Details -->
+          <tr class="myTextFett">
+            <td><span ng-show="verkaufsanzeige.preis > 0">Verkaufe</span> {{verkaufsanzeige.artikel}}</td>
+            <td class="text-right"><preis value="verkaufsanzeige.preis"/></td>
+          </tr>
+          <tr>
+            <td colspan="2">{{verkaufsanzeige.beschreibung}}</td>
+          </tr>
+          <!-- Button-Leiste -->
+          <tr>
+            <td class="text-right" colspan="2">
+              <input class="btn btn-primary myAbstandUnten" type="submit" ng-click="nachrichtSchreiben()" name="Nachricht" value="Nachricht"/>
+              <input class="btn btn-primary myAbstandUnten" type="submit" ng-click="kaufen($index)" name="Kaufen" value="Kaufen"/><br><br>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"date": {
+			"name": "date",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "date",
+			"order": 0
+		},
+		"sender": {
+			"name": "sender",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "sender",
+			"order": 1
+		},
+		"emfaenger": {
+			"name": "emfaenger",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "emfaenger",
+			"order": 2
+		},
+		"inhalt": {
+			"name": "inhalt",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "inhalt",
+			"order": 3
+		}
+	}
+}

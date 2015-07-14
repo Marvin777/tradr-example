@@ -1,0 +1,16 @@
+<div class="container">
+  <table class="table table-hover myTabellenzeilen myTextFett" cellspacing="0" cellpadding="0">
+    <!-- Iteriere ueber Datensaetze und gebe diese aus -->
+    <tbody>
+    <tr ng-repeat="suchanzeige in suchanzeigen">
+      <td>Suche {{suchanzeige.bezeichnung}}</td>
+      <td class="text-right">max. {{suchanzeige.preis | currency: ""}}<span> EUR</span></td>
+      <!-- Buttonleiste -->
+      <td class="text-right">
+        <input class="btn btn-primary myAbstandUnten" ng-click="nachrichtSchreiben()" type="submit" name="nachricht" value="Nachricht"/>
+        <input class="btn btn-primary myAbstandUnten" ng-click="angebot_machen()" type="submit" name="angebot" value="Angebot machen"/>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

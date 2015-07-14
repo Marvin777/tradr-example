@@ -1,0 +1,22 @@
+<div class="col-md-12 container">
+  <!-- Notwendige Daten fuer die Benutzer-Registrierung -->
+  <form id="reg" ng-submit="tryRegister(username,email,pw1,pw2)">
+    <div class="form-group">
+      <label>Benutzername</label>
+      <input type="text" class="form-control" id="inputName1" required="required" placeholder="Benutzername" name="username" ng-model="username">
+    </div>
+    <div class="form-group">
+      <label>Email address</label>
+      <input type="email" class="form-control" id="inputEmail1" required="required" placeholder="Email" name="email" ng-model="email">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" id="inputPassword1" required="required" placeholder="Password" name="pw1" ng-model="pw1">
+    </div>
+    <div class="form-group">
+      <label>Password bestätigen</label>
+      <input type="password" class="form-control" id="inputPassword2" required="required" placeholder="Password" name="pw2" ng-model="pw2">
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Registrieren</button>
+  </form>
+</div>

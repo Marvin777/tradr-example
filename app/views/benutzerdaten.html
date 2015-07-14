@@ -1,0 +1,49 @@
+<div class="container">
+  <form>
+    <div class="row">
+      <!-- Benutzerbild -->
+      <img class="col-md-2" src="images/benutzerbild_default.png" alt="Benutzerbild"/>
+      <!-- Benutzername und Bild hochladen -->
+      <div class="form-group col-md-6 col-md-offset-2 col-ms-12">
+        <label class="sr-only" for="BeBenutzer">Benutzername</label>
+        <input type="text" class="form-control" id="BeBenutzer" placeholder="{{myService.getAktUser()}}" disabled="disabled"/>
+      </div>
+      <input class="col-md-6 col-md-offset-2 col-ms-12" type="file" name="benutzerbild" value="Bild hochladen.." accept="image/*"/>
+    </div>
+    <!-- Beschreibung -->
+    <div class="row">
+      <div class="form-group col-md-6 col-md-offset-4 col-ms-12">
+        <label class="sr-only" for="BeBeschreibung">Beschreibung</label>
+        <textarea id="BeBeschreibung" class="form-control" name="beschreibung" placeholder="Sag etwas über dich.."></textarea>
+      </div>
+    </div>
+    <!-- E-Mail -->
+    <div class="row">
+      <div class="form-group col-md-6 col-md-offset-4 col-ms-12">
+        <label class="sr-only" for="BeEmail">Email</label>
+        <input id="BeEmail" class="form-control" type="email" placeholder="{{myService.getAktEmail()}}" required="required" name="email"/>
+      </div>
+    </div>
+    <!-- Passwort -->
+    <div class="row">
+      <div class="form-group col-md-6 col-md-offset-4 col-ms-12">
+        <label class="sr-only" for="BePassword">Passwort</label>
+        <input id="BePassword" class="form-control" type="password" placeholder="Passwort" required="required" name="passwort"/>
+      </div>
+    </div>
+    <!-- Passwort wiederholen -->
+    <div class="row">
+      <div class="form-group col-md-6 col-md-offset-4 col-ms-12">
+        <label class="sr-only" for="BePassword2">Passwort wiederholen</label>
+        <input id="BePassword2"class="form-control" type="password" placeholder="Passwort wiederholen" required="required" name="passwort2"/>
+      </div>
+    </div>
+    <!-- Buttonleiste -->
+    <div class="row">
+      <div class="col-md-offset-7 col-md-4 text-right">
+        <input class="btn btn-primary" type="reset" name="abbrechen" value="Verwerfen"/>
+        <input class="btn btn-primary" type="submit" name="speichern" value="Daten übernehmen"/>
+      </div>
+    </div>
+  </form>
+</div>

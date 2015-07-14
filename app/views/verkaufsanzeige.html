@@ -1,0 +1,42 @@
+<div class="container">
+  <form ng-submit="anzeigeAufgeben()">
+    <!-- Auswahlmenue zwischen Suche und Verkauf -->
+    <div class="form-group">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Verkaufsanzeige
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a ng-href="#/suchanzeige">Ich suche..</a></li>
+          <li><a ng-href="#/verkaufsanzeige">Ich verkaufe..</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Produktbild hochladen -->
+    <div class="form-group">
+      <input class="btn btn-default myButtonBilddatei" type="file" name="bild" value="Bild hochladen.." accept="image/*">
+    </div>
+    <!-- Produktueberschrift und Preis -->
+    <div class="form-horizontal">	<!-- Alternative zu "row" -->
+      <div class="form-group">
+        <div class="col-xs-8">
+          <input class="form-control" type="text" id="ueberschrift" name="ueberschrift" placeholder="Artikelüberschrift" required="required" autofocus="autofocus"/>
+        </div>
+        <div class="col-xs-4">
+          <input class="form-control" type="text" id="preis" name="preis" placeholder="0,00 EUR" required="required" pattern="\d*(,|.)?\d{1,2}"/>
+        </div>
+      </div>
+    </div>
+    <!-- Produktbeschreibung -->
+    <div class="form-group">
+      <textarea style="width: 100%" class="form-control" rows="10" name="artikelbeschreibung" placeholder="Artikelbeschreibung" required="required"></textarea>
+    </div>
+    <!-- Buttonleiste -->
+    <div class="text-right">
+      <input class="btn btn-primary" type="reset" name="abbrechen" value="Verwerfen"/>
+      <input class="btn btn-primary" type="submit" name="einstellen" value="Einstellen"/>
+    </div>
+  </form>
+</div>
+

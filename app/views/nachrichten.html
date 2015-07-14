@@ -1,0 +1,48 @@
+<div class="container">
+  <!-- Menueleiste: Nachricht-schreiben-Button -->
+  <div class="row myAbstandUnten">
+    <input class="btn btn-lg btn-primary col-md-3" ng-click="nachrichtSchreiben()" type="submit" name="nachrichtSchreiben" value="Nachricht schreiben"/>
+  </div>
+  <!-- Liste nacheinander alle Nachrichten auf -->
+  <div ng-repeat="nachricht in nachrichten">
+    <div class="nachricht">
+      <div class="row">
+        <div class="col-md-3 col-md-offset-1">Benutzer:{{nachricht.benutzer}}</div>
+        <div class="col-md-2 col-md-offset-2 text-right">{{nachricht.date|date:'dd.MM.yy H:mm'}}</div>
+        <div class="col-md-3 text-right">
+          <input class="btn btn-primary" ng-click="nachrichtAntworten()" type="submit" name="nachrichtAntworten" value="Antworten"/>
+          <button class="btn btn-primary" ng-click="nachrichtAuswaehlen($index)" type="button" data-toggle="modal" data-target="#nachrichtenLoeschenModal">Löschen</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          {{nachricht.inhalt}}
+        </div>
+      </div>
+    </div>
+    <!-- Trennstrich -->
+    <div class="row">
+      <hr class="col-md-10 col-md-offset-1"/>
+    </div>
+  </div>
+
+  <div class="modal fade" id="nachrichtenLoeschenModal" tabindex="-1" role="dialog" aria-labelledby="nachrichtenLoeschenModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="nachrichtenLoeschenModalLabel">Nachricht Löschen</h4>
+        </div>
+        <div class="modal-body">
+          Möchten Sie diese Nachricht wirklich löschen?
+          <br/>
+          (<nachricht-verkuerzt nachricht="nachrichten[indexAusgewaehlteNachricht]"></nachricht-verkuerzt>)
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="nachrichtLoeschen()">Ja, Löschen!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

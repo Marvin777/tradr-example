@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/nachricht_schreiben.css">
+    <link rel="stylesheet" href="styles/admin_statistik.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="webProjectApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header myNavigation">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <!-- Fuer Screen-Reader hat keine Auswirkung auf das Layout -->
+          <span class="sr-only">Navigation ein-/ausblenden</span>
+          <!-- Menuebutton fuer Responsible-Design -->
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- Firmen-Logo -->
+        <a class="navbar-brand" ng-href="#">
+          <img alt="logo" src="./images/logo.png"/>
+        </a>
+      </div>
+      <!-- Menue-Navigation -->
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav myVertikalZentriert">
+          <li class="myButtonNav"><a ng-href="#/suchanzeigen">Suchanzeigen</a></li>
+          <li class="myButtonNav"><a ng-href="#/verkaufsanzeigen">Verkaufsanzeigen</a></li>
+          <li class="myButtonNav"><a ng-href="#/verkaufsanzeige">Anzeige aufgeben..</a></li>
+        </ul>
+        <div class="navbar-form navbar-right" ng-controller="UserCtrl">
+          <input class="form-control myVertikalZentriert" type="search" name="suchen" placeholder="Suchen.."/>
+          <!-- Menue fuer eingeloggten Benutzer
+               Admin erhaellt zusaetzliche Menueeintrage
+               ng-cloak: Verhinder "Daten-Flackern" beim Laden der Seite -->
+          <div ng-cloak ng-show="myService.isAngemeldet()" class="btn-group myVertikalZentriert">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              {{myService.getAktUser()}}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a ng-href="#/benutzerdaten">Benutzerdaten</a></li>
+              <li><a ng-href="#/nachrichten">Nachrichten</a></li>
+              <li ng-show="myService.isAdmin()"><a ng-href="#/admin">Statistiken</a></li>
+              <li class="divider"></li>
+              <li><a ng-click="abmelden()" ng-href="#">Abmelden</a></li>
+            </ul>
+          </div>
+          <!-- Menue fuer normalen Besucher -->
+          <a ng-hide="myService.isAngemeldet()" ng-href="#/anmelden" class="btn btn-primary myVertikalZentriert">Anmelden</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Inhalte -->
+    <div class="container">
+      <div ng-view=""></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="myFooter">
+      <a href="agb.html" class="myButtonFooter">AGB</a>
+      <a href="impressum.html" class="myButtonFooter">Impressum</a>
+    </div>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-locale-bundles/dist/angular-locale-bundles.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script type="text/javascript" src="http://localhost:2403/dpd.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/willkommen.js"></script>
+    <script src="scripts/controllers/suchanzeige.js"></script>
+    <script src="scripts/controllers/suchanzeigen.js"></script>
+    <script src="scripts/controllers/verkaufsanzeige.js"></script>
+    <script src="scripts/controllers/verkaufsanzeigen.js"></script>
+    <script src="scripts/controllers/nachrichten.js"></script>
+    <script src="scripts/controllers/nachricht_schreiben.js"></script>
+    <script src="scripts/controllers/userverwaltung.js"></script>
+    <script src="scripts/controllers/admin-statistik.js"></script>
+    <script src="scripts/controllers/benutzerdaten.js"></script>
+    
+    <script src="scripts/loginService.js"></script>
+    <script src="scripts/datenhaltung.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

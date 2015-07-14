@@ -1,0 +1,17 @@
+<div class="container">
+  <form ng-submit="senden()">
+    <!-- Empfaenger -->
+    <div id="myNachrichtenEmpfaenger" class="form-group">
+      <input class="form-control" type="text" name="empfaenger" placeholder="Senden an.." required="required" autofocus="autofocus" />
+    </div>
+    <!-- Nachrichten-Body -->
+    <div class="form-group">
+      <textarea class="form-control" rows="10" name="nachrichtenText" placeholder="Nachricht" required="required"></textarea>
+    </div>
+    <!-- Buttonleiste -->
+    <div class="form-group text-right">
+      <input class="btn btn-primary" type="reset" name="abbrechen" value="Verwerfen"/>
+      <input class="btn btn-primary" type="submit" name="senden" value="Senden"/>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,119 @@
+#reg>.form-group, #reg>.btn{
+	margin: 30px auto;
+	width: 200px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 100px;
+}
+
+.myNavigation {
+	height: 80px;
+	/*background: -webkit-linear-gradient(90deg, white, #E0E0E0);
+	background: -moz-linear-gradient(90deg, white, #E0E0E0);
+	background: -ms-linear-gradient(90deg, white, #E0E0E0);
+	background: -o-linear-gradient(90deg, white, #E0E0E0);*/
+}
+
+/*
+  Der Footer ist fix am Seitenende angeordnet
+*/
+.myFooter {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 50px;
+	background-color: #e7e7e7;
+	padding-bottom: 0px;
+	text-align: center;
+	padding-top: 10px;
+	border: 1px solid silver;
+}
+
+.myFooter a {
+	text-decoration: none;
+	color: black;
+}
+
+/*
+  Buttons in der Navigationsliste
+*/
+.myButtonNav {
+	margin-left: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-radius: 20px;
+	font-size: 14px;
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 0.5s;
+	-ms-transition-property: background-color;
+	-ms-transition-duration: 0.5s;
+	-o-transition-property: background-color;
+	-o-transition-duration: 0.5s;
+	font-weight: bold;
+	border: 0px;
+}
+
+.myButtonNav:hover{
+	background-color: #C3DAE8;
+}
+
+/*
+  Buttons im Footer
+*/
+.myButtonFooter {
+	background-color: none;
+	border-radius: 15px;
+	border: 0px;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 7px;
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 0.5s;
+	-ms-transition-property: background-color;
+	-ms-transition-duration: 0.5s;
+	-o-transition-property: background-color;
+	-o-transition-duration: 0.5s;
+}
+
+.myButtonFooter:hover{
+	background-color: #C3DAE8;
+}
+
+.myVertikalZentriert {
+	margin-top: 17px;
+}
+
+.myTextFett {
+	font-weight: bold;
+}
+
+/*
+  Wird verwendet, um Abstaende nach unten zu ermoeglichen
+*/
+.myAbstandUnten {
+	margin-bottom: 10px;
+}
+
+.myTabellenzeilen {
+	margin: 50px auto;
+	background-color: none;
+	border: 0px;
+}
+
+.myTabellenzeilen td {
+	padding: 7px;
+	vertical-align: middle;
+}
+
+.myTable {
+	width: 100%;
+}
+
+

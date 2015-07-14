@@ -1,0 +1,25 @@
+<div class="container">
+  <form ng-submit="anmelden(userId, pw)">
+    <div class="row">
+      <div class="form-group col-md-4 col-md-offset-4 col-ms-12">
+        <label class="sr-only" for="AnBenutzer">Benutzername</label>
+        <input type="text" class="form-control" id="AnBenutzer" placeholder="Benutzername" name="userId" required="required" ng-model="userId"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4 col-md-offset-4 col-ms-12">
+        <label class="sr-only" for="AnPasswort">Passwort</label>
+        <input class="form-control" id="AnPasswort" type="password" placeholder="Passwort" name="pw" required="required" ng-model="pw"/>
+      </div>
+    </div>
+    <div class="row">
+      <input class="btn btn-primary col-md-2 col-md-offset-5 col-ms-12" type="submit" value="Anmelden"/>
+    </div>
+  </form>
+  <div class="row">
+    <hr class="col-md-4 col-md-offset-4 col-ms-12"/>
+  </div>
+  <div class="row">
+    <a class="btn btn-primary col-md-2 col-md-offset-5 col-ms-12" ng-href="#/registrieren" role="button">Neu registrieren</a>
+  </div>
+</div>
